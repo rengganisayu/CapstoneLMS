@@ -36,6 +36,10 @@ Route::get('/homepage', function () {
     return view('homepage');
 });
 
+Route::get('/draftH', function () {
+    return view('draftH');
+});
+
 Route::get('/login', function () {
     return view('login');
 });
