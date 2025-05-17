@@ -8,24 +8,121 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     
     <style>
+
+      :root {
+        --font-main: 'Poppins', sans-serif;
+        --font-weight-regular: 400;
+        --font-weight-semibold: 600;
+        --font-weight-bold: 700;
+        --font-weight-extrabold: 800;
+
+        --font-size-xs: 1rem;      /* 16px */
+        --font-size-sm: 1.25rem;   /* 20px */
+        --font-size-md: 1.5rem;    /* 24px */
+        --font-size-lg: 2rem;      /* 32px */
+        --font-size-xl: 2.5rem;    /* 40px */
+        --font-size-xxl: 3rem;     /* 48px */
+
+        --color-primary: #27374D;
+        --color-secondary: #3D5DED;
+        --color-bg: #f8f9fc;
+        --color-text: #111;
+        --color-subtext: #555;
+      }
+
       html, body {
         height: 100%;
         margin: 0;
         padding: 0;
         display: flex;
         flex-direction: column;
+        font-family: var(--font-main); /* Ganti font default ke Poppins */
       }
 
       body {
-        background-color: #f8f9fc; 
+        background-color: var(--color-bg); 
         padding-top: 0;
-        font-family: 'Helvetica Neue', sans-serif;
-      color: #111;
+        color: var(--color-text);
       }
+
 
       main {
         flex: 1;
       }
+
+
+      .hero3 {
+  position: relative;
+  height: 80vh;
+  background: url('/assets/image/hero.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero3-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero3-overlay h2 {
+  color: white;
+  font-family: var(--font-main);
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  text-shadow: 2px 2px 5px rgba(0,0,0,1);
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 2;
+}
+
+.menuchat-section {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 0 0 60px 0;
+}
+
+.images-wrapper {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  margin-right: 5rem;
+}
+
+.image-bg {
+  width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.image-front {
+  width: 400px;
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 70%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.text-content {
+  width: max-content;
+}
 
       .hero1 {
       display: flex;
@@ -38,21 +135,22 @@
     }
 
     .hero1-text {
-      max-width: 50%;
+      max-width: 80%;
       /* background-color: blueviolet; */
     }
 
     .subhead {
       color: #ff6a00;
-      font-weight: 700;
+      font-weight: var(--font-weight-bold);
       letter-spacing: 1px;
       margin-bottom: 1rem;
     }
 
     .hero1-text h1 {
-      font-size: 3rem;
-      font-weight: 800;
+      font-size: var(--font-size-xxl);
+      font-weight: var(--font-weight-extrabold);
       margin-bottom: 30px;
+      padding-top: 30px;
       line-height: 1.2;
     }
 
@@ -69,17 +167,17 @@
       bottom: -20px;
       width: 57%;
       height: 0.6em;
-      background: url('data:image/svg+xml;utf8,<svg width="100%" height="10" viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 5 Q 5 0, 10 5 T 20 5 T 30 5 T 40 5 T 50 5 T 60 5 T 70 5 T 80 5 T 90 5 T 100 5" stroke="blue" stroke-width="3" fill="none"/></svg>') no-repeat;
+      background: url('data:image/svg+xml;utf8,<svg width="100%" height="10" viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 5 Q 5 0, 10 5 T 20 5 T 30 5 T 40 5 T 50 5 T 60 5 T 70 5 T 80 5 T 90 5 T 100 5" stroke="%233D5DED" stroke-width="3" fill="none"/></svg>') no-repeat;
       background-size: 100% 100%;
       z-index: -1;
     }
 
-    .description {
+    /* .description {
       margin: 1rem 0 2rem 0;
       color: #555;
-      font-size: 1rem;
+      font-size: var(--font-size-xs);
       max-width: 450px;
-    }
+    } */
 
     .hero1-image img {
       max-width: 500px;
@@ -88,7 +186,7 @@
     }
 
       .btn-dark {
-        font-weight: 600;
+        font-weight: var(--font-weight-semibold);
         background-color: #27374D;
         border-style: none;
       }
@@ -98,8 +196,8 @@
       }
 
       .hero {
-        padding: 60px 20px;
-        /* background-color: yellow; */
+        padding: 40px 20px;
+        /* background-color: purple; */
       }
 
       .hero-img {
@@ -109,25 +207,28 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2rem;
+        font-size: var(--font-size-lg);
         color: #555;
         border-radius: 10px;
       }
 
       /* tambahan our fitur */
   .program-section {
-    padding: 4rem 1rem 0 1rem;
-    font-family: 'Poppins', sans-serif;
+    padding: 3rem;
+    font-family: var(--font-main);
+    background-color: #efefef;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
   }
 
   .program-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
     gap: 2rem;
+    /* background-color: yellow; */
+    padding: 0;
   }
 
   .program-intro {
@@ -135,31 +236,17 @@
   }
 
   .program-intro h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
     line-height: 1.2;
     margin-bottom: 1rem;
-  }
-
-  .highlight-title {
-    position: relative;
-    display: inline-block;
-  }
-
-  .highlight-title::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0.1em;
-    width: 100%;
-    height: 0.4em;
-    background: #ffa726;
-    z-index: -1;
+    /* background-color: green; */
   }
 
   .program-intro p {
-    font-size: 1rem;
+    font-size: var(--font-size-xs);
     color: #444;
+    /* background-color: blue; */
   }
 
   .program-cards {
@@ -167,32 +254,33 @@
     flex: 2 1 600px;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 2rem;
   }
 
   .program-card {
     flex: 1 1 200px;
+    padding: 0 1.5rem;
     text-align: center;
+    /* background-color: orange; */
   }
 
   .program-card i {
     /* color: red; */
-    font-size: 2.5rem;
+    font-size: var(--font-size-xl);
   }
 
   .program-card img {
-    width: 70px;
+    width: 150px;
     margin-bottom: 1rem;
   }
 
   .program-card h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
     margin-bottom: 0.5rem;
   }
 
   .program-card p {
-    font-size: 0.95rem;
+    font-size: var(--font-size-xs);
     color: #555;
   }
 
@@ -202,16 +290,6 @@
         margin-bottom: 40px;
       }
 
-      .kelas-section h5 {
-        margin-bottom: 20px;
-      }
-
-      .card {
-        border: none;
-        background-color: #f8f9fc; 
-        margin-top: 0px;
-      }
-
       .card-course {
         height: 180px;
         object-fit: cover;
@@ -219,15 +297,6 @@
         border-radius: 12px;
         transition: transform 0.6s;
         margin-right: 12px;
-      }
-
-      .card img{
-        border-radius: 12px;
-      }
-
-      .card img:hover {
-        transform: rotateY(180deg);
-        transition: transform ease;
       }
 
       .card-container {
@@ -258,6 +327,22 @@
         opacity: 1;
       }
 
+      .card-body {
+        background-color: #3D5DED;
+        border-radius: 8px;
+        min-height: 100px;
+      }
+
+      .card-body h5 {
+        font-family: var(--font-main);
+        font-weight:var(--font-weight-semibold);
+        font-size:var(--font-size-md);
+      }
+
+      .card-body p {
+        margin: 0;
+      }
+
       .footer {
         background-color: #0F172A;
         height: 80px;
@@ -270,7 +355,7 @@
 
       .footer p {
         margin: 0;
-        font-size: 14px;
+        font-size: var(--font-size-);
       }
     </style>
   </head>
@@ -279,93 +364,80 @@
     @include('navbar')
 
     <main>
+
+          <!-- hero image -->
+      <section class="hero3">
+  <div class="hero3-overlay">
+    <h2>INFORMATIKA<br>SMAN 1 KALIDAWIR</h2>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path d="M0,60 C120,20 240,100 360,60 C480,20 600,100 720,60 C840,20 960,100 1080,60 C1200,20 1320,100 1440,60 L1440,120 L0,120 Z" fill="#0f172a"/>
+    <path d="M0,100 C120,60 240,140 360,100 C480,60 600,140 720,100 C840,60 960,140 1080,100 C1200,60 1320,140 1440,100 L1440,160 L0,120 Z" fill="#f8f9fc"/>
+  </svg>
+</section>
+
       <section class="hero container">
-        <!-- <div class="row align-items-center mb-3"> -->
-          <!-- Gambar Informatika -->
-            <!-- <div class="card" >
-              <img src="https://i.pinimg.com/736x/57/46/8d/57468d8387042651790a73ade6a0d224.jpg" alt="gambar informatika" />
-            </div>
-          </div> -->
-
-          <!-- Teks Informatika -->
-          <!-- <div class="col-md-6">
-            <div class="card">
-              <h2 class="fw-bold" style= "margin-left: 30px">Apa sih Informatika?</h2>
-              <p class="text-muted" style= "margin-left: 30px">Informatika adalah pembelajaran yang mengajarkan cara berpikir logis, kreatif, dan sistematis dalam menyelesaikan masalah menggunakan teknologi digital.</p>
-            </div>
-          </div> -->
-          <div class="hero1">
-    <div class="hero1-text">
-      <p class="subhead">INTRODUCING INTERACTIVE</p>
-      <h1>
-        Learning courses <br />
-        <span class="highlight">by top teachers.</span>
-      </h1>
-      <p class="description">
-        Choose from over 4,000 courses on topics like cartoon design, graphic
-        design, fashion design, and much more.
-      </p>
-    </div>
-
-    <div class="hero1-image">
-      <!-- Ganti src ini ke gambar kamu -->
-      <img src="https://i.pinimg.com/736x/49/5f/d6/495fd6b6b92ded7b62023352a90881ee.jpg" alt="Course illustration" />
-    </div>
-    </div>
-
-        <!-- Bagian AI -->
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <div class="hero-text">
-              <h2 class="fw-bold">Kamu bisa belajar dengan AI</h2>
-              <p class="text-muted" style="margin: 1rem 0 2rem 0; color: #555; font-size: 1rem; max-width: 450px;">
-                Kamu bisa mencari materi tambahan, menemukan referensi baru, penjelasan yang lebih lengkap, hingga contoh soal dan informasi terkini yang mendukung pembelajaranmu. Temukan pengalaman belajar yang menyenangkan dan penuh wawasan bareng AI!
-              </p>
-              <a href="{{ url('/chatbot1') }}" class="btn btn-dark">
-                Yuk belajar! <span class="ms-1">➔</span>
-              </a>
+<section class="menuchat-section">
+  <div class="images-wrapper">
+    <img src="/assets/image/hero.jpg" class="image-bg" />
+    <img src="/assets/image/kecil.jpg" class="image-front" />
+  </div>
+  <div class="text-content">
+              <div class="hero1">
+            <div class="hero1-text">
+              <!-- <p class="subhead">INFORMATIKA</p> -->
+              <h1>
+                Kamu bisa belajar dengan AI!
+                <!-- <span class="highlight">by top teachers.</span> -->
+              </h1>
+              <div class="hero-text">
+                <p class="text-muted" style="margin: 1rem 0 2rem 0; color: #555; font-size: var(--font-size-xs); max-width: 450px;">
+                  Kamu bisa mencari materi tambahan, menemukan referensi baru, penjelasan yang lebih lengkap, hingga contoh soal dan informasi terkini yang mendukung pembelajaranmu. Temukan pengalaman belajar yang menyenangkan dan penuh wawasan bareng AI!
+                </p>
+                <a href="{{ url('/chatbot1') }}" class="btn btn-dark" style="background-color: #0F172A;">
+                  Yuk belajar! <span class="ms-1">➔</span>
+                </a>
+              </div>
             </div>
           </div>
-          <div class="col-md-6 text-center">
-            <img class="hero-img mt-4 mt-md-0" src="https://i.pinimg.com/736x/57/46/8d/57468d8387042651790a73ade6a0d224.jpg" alt="">
-          </div>
-        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         <!-- tambahan fitur -->
       <section class="program-section">
   <div class="container">
     <div class="program-intro">
-      <h2>Fitur<br><span>Kita</span></h2>
-      <p>Kita menawarkan beberapa fitur<br>Coba di cek.</p>
+      <h2>Apa yang bisa kamu lakukan disini?</h2>
+      <p>Kamu dapat temukan cara baru untuk belajar Informatika yang mudah, fleksibel, dan menyenangkan.</p>
     </div>
     <div class="program-cards">
       <div class="program-card">
-      <i class="bi bi-robot"></i> 
-        <h3>BotTiK</h3>
-        <p>kamu bisa chat bersama bot</p>
+        <img src="/assets/icon/ChatBot.svg" alt="chat bot">
+        <h3>BotTIK</h3>
+        <p>Chat bot membantu belajar secara mandiri dan menjawab pertanyaan seputar materi kapan saja.</p>
       </div>
       <div class="program-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="materi">
+        <img src="/assets/icon/Materi.svg" alt="materi">
         <h3>Baca Materi</h3>
-        <p>Learn how to shape your career with sessions!</p>
+        <p>Kamu dapat mengakses materi pelajaran Informatika yang disusun sistematis dan mudah dipahami.</p>
       </div>
       <div class="program-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/3030/3030333.png" alt="tugas">
+        <img src="/assets/icon/Tugas.svg" alt="tugas">
         <h3>Penugasan</h3>
-        <p>kerjain tugas yaaaaaaaaaaaa!</p>
+        <p>Platform ini memudahkanmu untuk mengunggah dan mengumpulkan tugas secara langsung kapan saja.</p>
       </div>
     </div>
   </div>
 </section>
-      </section>
-
-      
+      </section>      
 
       <section class="kelas-section container">
-        <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 10px;">
-          <h3 class="mb-0"><strong>Materi</strong></h3>
+        <div class="d-flex justify-content-between align-items-baseline" style="margin-bottom: 10px;">
+          <h3 class="mb-0" style="font-family: var(--font-main); color: var(--color-text); font-weight: var(--font-weight-semibold);">Materi</h3>
           <a href="/course" style="text-decoration:none !important;">
-            <h6 class="mb-0 text-muted" style="font-size: 0.9rem; cursor: pointer; ">Lihat Semua ➔</h6>
+            <h6 class="mb-0 text-muted" style="font-size: var(--font-size-xs); cursor: pointer; ">Lihat Semua ➔</h6>
           </a>
         </div>
 
@@ -398,26 +470,27 @@
       </section>
 
   <section class="container my-5">
-  <h3 class="mb-4 fw-bold">Jadwal Belajar Mingguan</h3>
+  <h3 class="mb-4" style="font-family: var(--font-main); color: var(--color-text); font-weight: var(--font-weight-semibold);">Jadwal Belajar Mingguan</h3>
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
     <div class="col">
-      <div class="card text-white bg-primary h-100">
+      <div class="card text-white">
         <div class="card-body">
-          <h5 class="card-title">Minggu 1</h5>
-          <p class="card-text">Bab 1: Pengenalan Informatika</p>
+          <h5>Minggu 1</h5>
+          <p style="font-size:var(--font-size-xs);">Bab 1: Pengenalan Informatika</p>
         </div>
       </div>
     </div>
 
     <div class="col">
-      <div class="card text-white bg-success h-100">
+      <div class="card text-white">
         <div class="card-body">
-          <h5 class="card-title">Penugasan</h5>
-          <p class="card-text">Bab 1: Pengenalan Informatika</p>
-          <p class="card-text">Batas Waktu: 20 April 2025</p>
+          <h5>Penugasan</h5>
+          <p style="font-size:var(--font-size-xs); margin-bottom: 0.5rem;">Bab 1: Pengenalan Informatika</p>
+          <p>Batas Waktu: 20 April 2025</p>
         </div>
       </div>
     </div>
+  </div>
     </section>
 
     </main>

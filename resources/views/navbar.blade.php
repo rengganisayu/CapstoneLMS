@@ -4,7 +4,7 @@
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="/homepage">
       <div>
-        <img src="https://shorturl.at/M3g26" alt="Logo" style="width: 40px; height: 40px; margin-right: 10px; border-radius: 50%; object-fit: cover;">
+        <img src="/assets/icon/LogoSMA.png" alt="Logo" style="width: 40px; height: 40px; margin-right: 10px; border-radius: 50%; object-fit: cover;">
       </div>
       <strong style="font-size: x-large; color: white">Informatika</strong>
     </a>

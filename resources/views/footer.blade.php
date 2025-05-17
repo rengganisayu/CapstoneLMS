@@ -30,7 +30,7 @@
       <div class="col-md-3">
         <div class="footer-logo d-flex align-items-center">
           <div>
-            <img src="https://shorturl.at/M3g26" alt="Logo" style="width: 40px; height: 40px; margin-right: 10px; border-radius: 50%; object-fit: cover;">
+            <img src="/assets/icon/LogoSMA.png" alt="Logo" style="width: 40px; height: 40px; margin-right: 10px; border-radius: 50%; object-fit: cover;">
           </div>
           <strong style="font-size: x-large; color:#ffffff;">Informatika</strong>
         </div>
