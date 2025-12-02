@@ -1,0 +1,39 @@
+name: Node.js CI
+
+# Kapan action ini berjalan? (Saat ada push ke branch main)
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Mengambil kode dari repositori Anda
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # 2. Menyiapkan Node.js (Ganti versi sesuai kebutuhan, misal 18, 20, 22)
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    # 3. Install dependensi (npm ci lebih cepat & aman untuk CI daripada npm install)
+    - name: Install dependencies
+      run: npm ci
+
+    # 4. Jalankan Build
+    - name: Run Build
+      run: npm run build
+
+    # (Opsional) 5. Simpan hasil build (folder dist/build) agar bisa di-download
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-folder
+        path: dist/  # Sesuaikan dengan output folder build Anda (misal: build/ atau dist/)
